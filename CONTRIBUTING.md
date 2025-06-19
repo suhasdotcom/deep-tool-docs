@@ -97,13 +97,13 @@ If in doubt, open an issue to start a discussion!
 When documenting CLI-based experiments, please:
 
 - Be **as verbose, clear and extensive as possible**. The more detail, the better.
-- Provide the **full command** including all flags/options in a `shell` block:
+- Provide the **full command** including all flags/options in a `shell` block/` ```shell ``` ` snippet:
 
   ```shell
   ls -al
   ```
 
-- Include the **exact output** separated by purpose:
+- Include the **exact output** separated by purpose in a `text` block/` ```text ``` ` snippet, with STDOUT labeled as `STDOUT: ` and STDERR labeled as `STDERR: ` per line:
 
   **stdin** (if used):
   ```text
@@ -113,6 +113,8 @@ When documenting CLI-based experiments, please:
   **output:**
   ```text
   STDOUT: standard output here
+  STDOUT: printing next on stderr
+  STDERR: 
   STDERR: error message here
   ```
 
