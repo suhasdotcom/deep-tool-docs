@@ -1,0 +1,17 @@
+# Default IDE ignored files
+.idea
+/*.iml
+/*.ipr
+/*.iws
+/shelf/
+.venv
+# .enc is the virtual env required by README file commands.
+.enc
+build
+*.egg-info
+*.whl
+*/__pycache__
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
