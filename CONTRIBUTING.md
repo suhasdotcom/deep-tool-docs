@@ -82,7 +82,7 @@ We are an open, respectful, and inclusive community.
 ## 🚀 How to Contribute
 
 1. **Fork** the repo **or** create a branch in your own fork named like this:  
-   `github-username/tool/<descriptive-branch-name>`
+   `<github-username>/<tool-name>/<descriptive-branch-name>`
 
 2. Add your Markdown file or edit an existing one.
 3. Add any helpful assets inside the appropriate `resources/` folder.
