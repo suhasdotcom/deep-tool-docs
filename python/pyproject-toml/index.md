@@ -39,3 +39,5 @@ Note the:
     [project.optional-dependencies]
     cli =["click"]
     ```
+
+> Note: the optional dependency is not required to be installed in the lib-proj if client-proj wants to use it.
