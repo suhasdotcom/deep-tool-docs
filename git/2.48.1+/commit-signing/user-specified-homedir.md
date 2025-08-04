@@ -80,3 +80,38 @@ git config --local commit.gpgsign true
 ---
 
 This approach provides fine-grained control over GPG key usage, making it easier to maintain security boundaries per project.
+
+
+### 5. 🤔 What git runs internally when signing commits
+
+```shell
+$ GNUPGHOME=.git/.ano-gpg/.gitks/final/ GIT_TRACE=1 git commit -m "adding a-file" -S63DB42567A22A25A!
+```
+
+```terminaloutput
+12:10:38.134648 exec-cmd.c:266          trace: resolved executable dir: C:/Program Files/Git/mingw64/bin
+12:10:38.134648 git.c:476               trace: built-in: git commit -m 'adding a-file' '-S63DB42567A22A25A'\!''
+12:10:38.150514 run-command.c:668       trace: run_command: gpg --status-fd=2 -bsau '63DB42567A22A25A'\!''
+12:10:38.150514 run-command.c:929       trace: start_command: gpg --status-fd=2 -bsau '63DB42567A22A25A'\!''
+error: gpg failed to sign the data:
+gpg: keybox '/tmp/pytest-of-suhas/pytest-90/test_centrally_registers_branc0/local/.git/.ano-gpg/.gitks/final/pubring.kbx' created
+gpg: skipped "63DB42567A22A25A!": No secret key
+[GNUPG:] INV_SGNR 9 63DB42567A22A25A!
+[GNUPG:] FAILURE sign 17
+gpg: signing failed: No secret key
+
+fatal: failed to write commit object
+```
+
+git runs `gpg --status-fd=2 -bsau 'key-id'` to sign commits.
+
+
+### 6. Change commit signing program
+
+Commit signing and verification program can be changed using the `gpg.program` config key.
+
+```shell
+git config --local gpg.program /path/to/your/gpg-or-other-commit-signing/executable
+```
+
+[Doc reference](https://git-scm.com/docs/git-config#Documentation/git-config.txt-gpgprogram)
