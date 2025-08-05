@@ -217,3 +217,11 @@ sub   cv25519 2025-08-04 [E] [expires: 2025-10-03]
 ```
 
 Notice the no `[ultimate]` trust level is indicated.
+
+
+## Import notes
+
+* Keys can be imported using the `--import` switch.
+* Updated keys from one keyring and/or homedir can be exported to update another keyring/homedir.
+* Passphrases will be asked on each secret key import/export operation.
+
