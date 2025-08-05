@@ -17,7 +17,7 @@ On windows:
 
 ```toml
 dependencies = [
-    "lib-proj @ git+file:///d:/TestTmpDir/python/project-dependency-check/optional-dep-check/lib-proj"
+    "lib-proj @ git+file:///d:/TestTmpDir/python/project-dependency-check/optional-dep-check/lib-proj" # by default goes to main or master branch.
 ]
 ```
 
@@ -25,8 +25,8 @@ dependencies = [
 
 ```toml
 dependencies = [
-    "lib-proj @ git+https://github.com/user/repo.git",
-    "sub-lib-pkg @ git+https://github.com/user/repo.git#subdirectory=path/to/package",
+    "lib-proj @ git+https://github.com/user/repo.git", # by default goes to main or master branch.
+    "sub-lib-pkg @ git+https://github.com/user/repo.git#subdirectory=path/to/package", # by default goes to main or master branch.
     "tag-dep @ git+https://github.com/user/repo.git@v0.0.1",
     "branch-dep @ git+https://github.com/user/repo.git@some-branch",
     "commit-dep @ git+https://github.com/user/repo.git@0aef345c", # not really recommended, better to tag it.
