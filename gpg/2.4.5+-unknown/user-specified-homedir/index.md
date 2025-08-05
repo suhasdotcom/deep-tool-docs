@@ -29,6 +29,7 @@ Includes:
 * Creating GPG keys in a \`user/specified/home/directory\` directory [generate-keys](./generate-keys.md).
 * Tips on exact key usage (with `!` for subkey precision).
 * How to isolate different keys on homedirs.
+* Exporting keys, subkeys and secrets [export-keys](./export-keys.md).
 
 ## ✅ Suitable For
 
