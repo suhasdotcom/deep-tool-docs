@@ -385,3 +385,96 @@ $ gpg --homedir=base-keys/ --expert --list-key F25884FA53937E77!
 <code style="color : red">
 gpg: error reading key: No public key
 </code>
+
+
+## Multiple primary key with same user info
+
+User `ss-1` with email `ss-1@ss.ss` existed before but a new key can be created for the same user, like so:
+
+```shell
+$ gpg --homedir=base-keys/ --no-default-keyring --keyring=base-keys/base-keyring --expert --full-gen-key
+```
+
+```terminaloutput
+gpg (GnuPG) 2.4.5-unknown; Copyright (C) 2024 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (7) DSA (set your own capabilities)
+   (8) RSA (set your own capabilities)
+   (9) ECC (sign and encrypt) *default*
+  (10) ECC (sign only)
+  (11) ECC (set your own capabilities)
+  (13) Existing key
+  (14) Existing key from card
+Your selection? 11
+
+Possible actions for this ECC key: Sign Certify Authenticate
+Current allowed actions: Sign Certify
+
+   (S) Toggle the sign capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? S
+
+Possible actions for this ECC key: Sign Certify Authenticate
+Current allowed actions: Certify
+
+   (S) Toggle the sign capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection?
+Please select which elliptic curve you want:
+   (1) Curve 25519 *default*
+   (2) Curve 448
+   (3) NIST P-256
+   (4) NIST P-384
+   (5) NIST P-521
+   (6) Brainpool P-256
+   (7) Brainpool P-384
+   (8) Brainpool P-512
+   (9) secp256k1
+Your selection?
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 3m
+Key expires at Mon Nov  3 18:00:43 2025 IST
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: ss-1
+Email address: ss-1@ss.ss
+Comment:
+You selected this USER-ID:
+    "ss-1 <ss-1@ss.ss>"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: revocation certificate stored as '/d/TestTmpDir/gpg/gpg-subkey-secrets-exports/base-keys/openpgp-revocs.d/8EAA278178F0756549458FB5814378F974576A86.rev'
+public and secret key created and signed.
+
+pub   ed25519 2025-08-05 [C] [expires: 2025-11-03]
+      8EAA278178F0756549458FB5814378F974576A86
+uid                      ss-1 <ss-1@ss.ss>
+```
+
+Key with user info:
+* user name: `ss-1`
+* user email: `ss-1@ss.ss`
+
+existed before and a new key is generated for the same user id now.
