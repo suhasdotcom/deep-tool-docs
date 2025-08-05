@@ -8,6 +8,34 @@ dependencies = [
 ]
 ```
 
+
+##### Specifying git dependencies
+
+###### Local
+
+On windows:
+
+```toml
+dependencies = [
+    "lib-proj @ git+file:///d:/TestTmpDir/python/project-dependency-check/optional-dep-check/lib-proj"
+]
+```
+
+###### Remote
+
+```toml
+dependencies = [
+    "lib-proj @ git+https://github.com/user/repo.git",
+    "sub-lib-pkg @ git+https://github.com/user/repo.git#subdirectory=path/to/package",
+    "tag-dep @ git+https://github.com/user/repo.git@v0.0.1",
+    "branch-dep @ git+https://github.com/user/repo.git@some-branch",
+    "commit-dep @ git+https://github.com/user/repo.git@0aef345c", # not really recommended, better to tag it.
+]
+```
+
+> Note: dependencies on git for local can be specified similar to remote, i.e. @, # etc symbols work locally too.
+
+
 ##### Specifying local dependencies
 
 On windows:
