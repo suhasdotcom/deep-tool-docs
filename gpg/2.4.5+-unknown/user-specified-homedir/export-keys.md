@@ -74,6 +74,21 @@ grp:::::::::E249207A7C6DF644BE46AAECAC34E248069AC621:
 
 Notice the secret `sec 101DA1D42E4FECA1` and all the subkeys are exported.
 
+
+### Exports can even be done on any key identifier, like uname, uemail
+
+User name:
+
+```shell
+$ gpg --homedir=base-keys/ --no-default-keyring --keyring=base-keys/base-keyring --armor --export ss-2
+```
+
+User email:
+
+```shell
+$ gpg --homedir=base-keys/ --no-default-keyring --keyring=base-keys/base-keyring --armor --export ss-2@ss.ss
+```
+
 ## Exporting specific subkey
 
 `F25884FA53937E77` is only for encryption and expires earlier than the main primary key.
