@@ -34,3 +34,7 @@ Feel free to open a PR if you have tips, workflows, or corrections to share.
 ```
 > This is an evolving repo — built to make working with gpg a little less mysterious and a lot more powerful.
 ```
+
+### Learning resources
+
+- [Subkeys and why to use them?](https://wiki.debian.org/Subkeys?action=show&redirect=subkeys)
