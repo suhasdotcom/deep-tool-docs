@@ -21,6 +21,8 @@ Can be set by:
     GNUPGHOME=path/to/my/homedir gpg ...options
     ```
 
+> Note: `--homedir` switch takes preference over `GNUPGHOME` env var.
+
 
 ## 📄 Reference Guide
 
