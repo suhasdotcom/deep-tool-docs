@@ -1,5 +1,7 @@
 # Encrypt with subkeys
 
+[Debian subkey explanation](https://wiki.debian.org/Subkeys?action=show&redirect=subkeys)
+
 * Encryption can be directly done using the primary key as such:
     ```shell
     gpg --encrypt --armor file-to-encrypt --recipient 8EAA278178F0756549458FB5814378F974576A86
