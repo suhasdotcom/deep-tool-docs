@@ -103,7 +103,7 @@ When documenting CLI-based experiments, please:
   ls -al
   ```
 
-- Include the **exact output** separated by purpose in a `text` block/` ```text ``` ` snippet, with STDOUT labeled as `STDOUT: ` and STDERR labeled as `STDERR: ` per line:
+- Include the **exact output** separated by purpose in a `text` block/` ```text ``` ` snippet, with STDOUT labeled as `OUT: ` per line and STDERR is not labeled at all. Or better, simply use the [GSO](https://github.com/Vaastav-Technologies/gso) tool. It was created for this purpose:
 
   **stdin** (if used):
   ```text
@@ -112,10 +112,11 @@ When documenting CLI-based experiments, please:
 
   **output:**
   ```text
-  STDOUT: standard output here
-  STDOUT: printing next on stderr
-  STDERR: 
-  STDERR: error message here
+  OUT: standard output here
+  OUT: printing next on stdout
+
+  error message here from stderr
+  stderr may have no label.
   ```
 
 - You may also separate multi-step stdin and outputs like this:
@@ -132,7 +133,7 @@ When documenting CLI-based experiments, please:
 
   output:
   ```text
-  STDOUT: Hello your-name
+  OUT: Hello your-name
   ```
 
   stdin:
@@ -142,7 +143,7 @@ When documenting CLI-based experiments, please:
 
   output:
   ```text
-  STDOUT: Added details: extra info
+  OUT: Added details: extra info
   ```
 
 - You may also use a **combined stdin** block for full flow replication:
@@ -163,12 +164,12 @@ When documenting CLI-based experiments, please:
 
   output:
   ```text
-  STDOUT: Name entered: suhas
-  STDOUT: description added:
-  STDOUT: curious
-  STDOUT: engineer
-  STDOUT: 
-  STDOUT: here
+  OUT: Name entered: suhas
+  OUT: description added:
+  OUT: curious
+  OUT: engineer
+  OUT: 
+  OUT: here
   ```
 
 - Always show the **exit/return code**:
@@ -209,8 +210,8 @@ new commit message
 
 output:
 ```text
-STDOUT: [master 2efeea0] new commit
-STDOUT:  1 file changed, 1 insertion(+)
+OUT: [master 2efeea0] new commit
+OUT:  1 file changed, 1 insertion(+)
 ```
 
 exit code: 0
@@ -223,8 +224,8 @@ git commit -m "new commit"
 
 output:
 ```text
-STDOUT: [master 2efeea0] new commit
-STDOUT:  1 file changed, 1 insertion(+)
+OUT: [master 2efeea0] new commit
+OUT:  1 file changed, 1 insertion(+)
 ```
 
 exit code: 0
