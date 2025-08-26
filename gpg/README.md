@@ -5,6 +5,7 @@ This directory contains guides, tips, and configuration references related to Gn
 ## 📁 Contents
 
 * [Keys nuances](./2.4.5+-unknown/keys.md)
+* [Keyring exploration](./2.4.5+-unknown/keyrings.md)
 * `user-specified-homedir.md` — Guide on using a custom GPG home directory for scoped keys.
 * `user-specified-keyring.md` — Guide on using a custom GPG keyring for scoped keys.
 
