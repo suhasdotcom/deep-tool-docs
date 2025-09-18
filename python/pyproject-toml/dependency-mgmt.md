@@ -32,6 +32,7 @@ dependencies = [
 ```
 
 > Note: dependencies on git for local can be specified similar to remote, i.e. @, # etc symbols work locally too.
+>   Use `git+file:///<path-to-local-repo>[@branch-or-tag]` in such a case.
 
 
 ### Specifying local dependencies
