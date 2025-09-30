@@ -71,3 +71,13 @@ Note the:
 
 
 ### [Including a dependency-group into another](https://peps.python.org/pep-0735/#dependency-group-include)
+
+Basically like this:
+
+```toml
+[dependency-groups]
+group-a = ["foo"]
+group-b = ["foo>1.0"]
+group-c = ["foo<1.0"]
+all = ["foo", {include-group = "group-a"}, {include-group = "group-b"}, {include-group = "group-c"}]
+```
