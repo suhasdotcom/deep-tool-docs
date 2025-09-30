@@ -68,3 +68,6 @@ Note the:
     ```
 
 > Note: the optional dependency is not required to be installed in the lib-proj if client-proj wants to use it.
+
+
+### [Including a dependency-group into another](https://peps.python.org/pep-0735/#dependency-group-include)
