@@ -9,6 +9,7 @@ This directory contains guides, tips, and configuration references related to Gn
 * `user-specified-homedir.md` — Guide on using a custom GPG home directory for scoped keys.
 * `user-specified-keyring.md` — Guide on using a custom GPG keyring for scoped keys.
 * Some programming library related nuances in the `libs` directory. 
+* [gpg issues on windows](./issues/windows.md)
 
 ## 📌 Scope
 
