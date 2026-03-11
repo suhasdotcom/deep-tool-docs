@@ -32,3 +32,21 @@ It may appear as gpg is unresponsive on windows when trying to decrypt something
   gpg-connect-agent: connection to the agent established
   ```
 - Configure gpg-agent or equivalent in GPG4Win to start at computer startup.
+
+
+## Different keys on gpg on cmd and gpg on bash
+
+```shell
+gpg --list-keys
+```
+
+Produces different set of keys when run on any Windows terminal and a totally different set of keys when run from 
+git bash.
+
+Further investigation revealed that gpg uses homedir as:
+- `C:\Users\<user>\AppData\Roaming\gnupg` - when run from Windows terminal or anything other than git bash
+- `C:\Users\<user>\.gnupg` - when run from git bash on Windows.
+
+This may even stem from the installation of GPG4Win along with gpg that comes bundled in git.
+
+> Tip: Better to set a consistent `homedir` to avoid surprises later.
